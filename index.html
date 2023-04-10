@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Buster Tower is taking damage~!</title>
+  <style>
+    * {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .main {
+      width: full;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .spin {
+      /* infinitely rotate the image */
+      animation-name: spin;
+      animation-duration: 4000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main"><img class="spin" src="./xiera.png" alt="xiera"> <h1>Coming soon!!!</h1></div>
+
+  <script>
+    const img = document.querySelector('img');
+    const audio = new Audio('./vineboom.mp3');
+    document.addEventListener('click', () => {
+      bgm.play();
+
+    });
+    const bgm = new Audio('./bgm.mp3');
+    img.addEventListener('click', () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+  </script>
+
+</body>
+
+
+</html>
